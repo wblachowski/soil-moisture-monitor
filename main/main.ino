@@ -18,7 +18,6 @@ void setup() {
     for(;;);
   }
   display.clearDisplay();
-  delay(2000);
   display.setTextSize(3);
   display.setTextColor(WHITE);
   display.setCursor(0, 10);
