@@ -13,26 +13,27 @@ int MOISTURE_SENSOR = A0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-    if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
     Serial.println(F("SSD1306 allocation failed"));
     for(;;);
   }
   display.clearDisplay();
   display.setTextSize(3);
   display.setTextColor(WHITE);
-  display.setCursor(0, 10);
 }
 
 void loop() {
-  sensorValue = analogRead(MOISTURE_SENSOR);
-  percent = convertToPercent(sensorValue);
-  printValuesToSerial(percent);
+  int sensorValue = analogRead(MOISTURE_SENSOR);
+  Serial.println(sensorValue);
+  int percent = convertToPercent(sensorValue);
+  displayValue(percent);
+  Serial.println(percent);
   delay(500);
 }
 
 int convertToPercent(int value)
 {
-  return map(value, 1023, 465, 0, 100);
+  return map(value, 1023, 0, 0, 100);
 }
 
 void displayValue(int percent)
