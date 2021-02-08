@@ -9,9 +9,12 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 int MOISTURE_SENSOR = A0;
+int MOISTURE_POWER = 10;
+long MEASUREMENT_FREQ = 60L*1000; // Every minute
+int MEASUREMENT_DUR = 100; // 50ms of power before measuring
 
 void setup() {
-  // put your setup code here, to run once:
+  pinMode(MOISTURE_POWER, OUTPUT);
   Serial.begin(9600);
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3D for 128x64
     Serial.println(F("SSD1306 allocation failed"));
@@ -23,12 +26,16 @@ void setup() {
 }
 
 void loop() {
+  analogWrite(MOISTURE_POWER, 255);
+  delay(MEASUREMENT_DUR);
   int sensorValue = analogRead(MOISTURE_SENSOR);
+  analogWrite(MOISTURE_POWER, 0);
+  
   Serial.println(sensorValue);
   int percent = convertToPercent(sensorValue);
   displayValue(percent);
   Serial.println(percent);
-  delay(500);
+  delay(MEASUREMENT_FREQ);
 }
 
 int convertToPercent(int value)
