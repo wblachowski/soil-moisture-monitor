@@ -20,15 +20,19 @@ void setup() {
 void loop() {
   display.displayTime(myRTC.now());
   if (lastMeasurement==0L || millis() - lastMeasurement > MEASUREMENT_FREQ){
-      analogWrite(MOISTURE_POWER, 255);
-      delay(MEASUREMENT_DUR);
-      int sensorValue = analogRead(MOISTURE_SENSOR);
-      analogWrite(MOISTURE_POWER, 0);
-      int percentage = convertToPercentage(sensorValue);   
-      display.displayMoisture(percentage);
+      int moisture = measureMoisture();   
+      display.displayMoisture(moisture);
       lastMeasurement = millis();
   }
   delay(1000);
+}
+
+int measureMoisture(){
+  analogWrite(MOISTURE_POWER, 255);
+  delay(MEASUREMENT_DUR);
+  int sensorValue = analogRead(MOISTURE_SENSOR);
+  analogWrite(MOISTURE_POWER, 0);
+  return convertToPercentage(sensorValue); 
 }
 
 int convertToPercentage(int value)
