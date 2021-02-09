@@ -19,12 +19,18 @@ void setup() {
 
 void loop() {
   display.displayTime(myRTC.now());
-  if (lastMeasurement==0L || millis() - lastMeasurement > MEASUREMENT_FREQ){
+  if (shouldMeasureMoisture()){
       int moisture = measureMoisture();   
       display.displayMoisture(moisture);
       lastMeasurement = millis();
   }
   delay(1000);
+}
+
+bool shouldMeasureMoisture(){
+  bool firstMeasurement = lastMeasurement==0L;
+  bool timePassed = millis() - lastMeasurement > MEASUREMENT_FREQ;
+  return firstMeasurement || timePassed;
 }
 
 int measureMoisture(){
