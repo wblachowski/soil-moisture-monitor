@@ -28,7 +28,7 @@ void Display::displayMoisture(int percentage)
     display.setCursor(0, 0);
     display.print("   ");
     display.setCursor(0, 0);
-    display.print(percentage);
+    display.print(min(percentage, 99));
     display.print("%");
     display.display();
 }
