@@ -55,20 +55,32 @@ void Display::displayTime(DateTime time)
         display.print('0');
     }
     display.print(time.second());
-
-    display.setCursor(80, 15);
-    if (time.day() < 10)
-    {
-        display.print('0');
-    }
-    display.print(time.day());
-    display.print('.');
-    if (time.month() < 10)
-    {
-        display.print('0');
-    }
-    display.print(time.month());
-    display.print('.');
-    display.print(time.year() % 100);
     display.display();
+}
+
+void Display::displayLastWatering(uint32_t now, uint32_t wateringTime)
+{
+    display.setTextSize(1);
+    display.setCursor(80, 12);
+    display.print("Last wat:");
+    display.setCursor(80, 24);
+
+    uint32_t diff = now - wateringTime;
+    int days = diff / 86400;
+    int hours = (diff % 86400) / 3600;
+    if (wateringTime == 0)
+    {
+        display.print("--------");
+    }
+    else if (days > 99)
+    {
+        display.print("99+ d");
+    }
+    else
+    {
+        display.print(days);
+        display.print("d ");
+        display.print(hours);
+        display.print("h");
+    }
 }

@@ -31,6 +31,7 @@ void setup() {
 void loop() {
   display.displayTime(myRTC.now());
   if (shouldMeasureMoisture()){
+      display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
       int moisture = measureMoisture();   
       display.displayMoisture(moisture);
       int historyInput = calculateHistoryInput(moisture);
