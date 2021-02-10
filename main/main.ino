@@ -66,7 +66,8 @@ int calculateHistoryInput(int moisture)
 }
 
 int wateringDetected(){
+  bool enoughData = history.isFull();
   bool wateringIntervalPassed = millis() - lastWatering > WATERING_INTERVAL;
   bool moistureIncrease = history.last() - history.first() > WATERING_INCREASE_THRESHOLD;
-  return wateringIntervalPassed && moistureIncrease;
+  return enoughData && wateringIntervalPassed && moistureIncrease;
 }
