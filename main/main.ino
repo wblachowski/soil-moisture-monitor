@@ -1,6 +1,8 @@
 #include <Wire.h>
-#include "Display.h"
+#include <EEPROM.h>
+#include <DS3231.h>
 #include <CircularBuffer.h>
+#include "Display.h"
 
 Display display;
 RTClib myRTC;

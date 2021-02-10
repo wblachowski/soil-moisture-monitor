@@ -1,4 +1,5 @@
 #include "Display.h"
+#include <DS3231.h>
 #include <Wire.h>
 #include <Adafruit_SSD1306.h>
 
