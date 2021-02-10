@@ -10,7 +10,7 @@ RTClib myRTC;
 #define MEASUREMENT_FREQ 60L*1000 // Every minute
 #define MEASUREMENT_DUR 100 // 50ms of power before measuring
 #define HISTORY_EMA_BETA 0.9 //averaging over 10 measurements
-#define WATERING_INTERVAL 60L*3*60*1000 //at least three hours between waterings
+#define WATERING_INTERVAL 3L*60*60 //at least three hours between waterings
 #define WATERING_INCREASE_THRESHOLD 5 //at least 5 percent increase to detect watering
 
 unsigned long lastMeasurement = 0L;
@@ -31,7 +31,7 @@ void loop() {
       int historyInput = calculateHistoryInput(moisture);
       history.push(historyInput);
       if(wateringDetected()){
-        lastWatering = millis();
+        lastWatering = myRTC.now().unixtime();
       }
       lastMeasurement = millis();
   }
@@ -67,7 +67,7 @@ int calculateHistoryInput(int moisture)
 
 int wateringDetected(){
   bool enoughData = history.isFull();
-  bool wateringIntervalPassed = millis() - lastWatering > WATERING_INTERVAL;
+  bool wateringIntervalPassed = myRTC.now().unixtime() - lastWatering > WATERING_INTERVAL;
   bool moistureIncrease = history.last() - history.first() > WATERING_INCREASE_THRESHOLD;
   return enoughData && wateringIntervalPassed && moistureIncrease;
 }
