@@ -1,5 +1,6 @@
 #include <Wire.h>
 #include "Display.h"
+#include <CircularBuffer.h>
 
 Display display;
 RTClib myRTC;
@@ -10,6 +11,7 @@ RTClib myRTC;
 #define MEASUREMENT_DUR 100 // 50ms of power before measuring
 
 unsigned long lastMeasurement = 0L;
+CircularBuffer<int, 30> history;
 
 void setup() {
   pinMode(MOISTURE_POWER, OUTPUT);
@@ -22,6 +24,7 @@ void loop() {
   if (shouldMeasureMoisture()){
       int moisture = measureMoisture();   
       display.displayMoisture(moisture);
+      history.push(moisture);
       lastMeasurement = millis();
   }
   delay(1000);
