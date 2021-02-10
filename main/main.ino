@@ -9,8 +9,11 @@ RTClib myRTC;
 #define MOISTURE_POWER 10
 #define MEASUREMENT_FREQ 60L*1000 // Every minute
 #define MEASUREMENT_DUR 100 // 50ms of power before measuring
-
+#define HISTORY_EMA_BETA 0.9 //averaging over 10 measurements
+#define WATERING_INTERVAL 60L*3*60*1000 //at least three hours between waterings
+ 
 unsigned long lastMeasurement = 0L;
+unsigned long lastWatering = 0L;
 CircularBuffer<int, 30> history;
 
 void setup() {
@@ -24,7 +27,11 @@ void loop() {
   if (shouldMeasureMoisture()){
       int moisture = measureMoisture();   
       display.displayMoisture(moisture);
-      history.push(moisture);
+      int historyInput = calculateHistoryInput(moisture);
+      history.push(historyInput);
+      if(wateringDetected()){
+        lastWatering = millis();
+      }
       lastMeasurement = millis();
   }
   delay(1000);
@@ -47,4 +54,16 @@ int measureMoisture(){
 int convertToPercentage(int value)
 {
   return map(value, 1023, 0, 0, 100);
+}
+
+int calculateHistoryInput(int moisture)
+{
+  if(history.isEmpty()){
+    return moisture;
+  }
+  return history.last()*HISTORY_EMA_BETA+(1-HISTORY_EMA_BETA)*moisture;
+}
+
+int wateringDetected(){
+  return false; //TODO
 }
