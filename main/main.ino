@@ -3,8 +3,10 @@
 #include <DS3231.h>
 #include <CircularBuffer.h>
 #include "Display.h"
+#include "Memory.h"
 
 Display display;
+Memory memory;
 RTClib myRTC;
 
 #define MOISTURE_SENSOR A0
@@ -16,12 +18,13 @@ RTClib myRTC;
 #define WATERING_INCREASE_THRESHOLD 5 //at least 5 percent increase to detect watering
 
 unsigned long lastMeasurement = 0L;
-unsigned long lastWatering = 0L;
+uint32_t lastWatering = 0L;
 CircularBuffer<int, 30> history;
 
 void setup() {
   pinMode(MOISTURE_POWER, OUTPUT);
   display.initialize();
+  lastWatering = memory.readLastWatering();
   Serial.begin(9600);
 }
 
@@ -34,6 +37,7 @@ void loop() {
       history.push(historyInput);
       if(wateringDetected()){
         lastWatering = myRTC.now().unixtime();
+        memory.saveLastWatering(lastWatering);
       }
       lastMeasurement = millis();
   }
