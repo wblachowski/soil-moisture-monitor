@@ -81,6 +81,7 @@ void Display::displayLastWatering(uint32_t now, uint32_t wateringTime)
         display.print(days);
         display.print("d ");
         display.print(hours);
-        display.print("h");
+        display.print("h     ");
     }
+    display.display();
 }
