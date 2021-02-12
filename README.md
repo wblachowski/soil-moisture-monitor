@@ -1,10 +1,10 @@
 # Soil Moisture Monitor 🌱
-> There's no reason to stick your finger in dirt ever again.
+> There's no reason to stick your finger in the dirt ever again.
 
 This is an Arduino project for monitoring soil moisture to keep your plants lush and healthy. It comes with a standard moisture reading as well as automatic watering detection to let you know how long it's been since the last watering.
 
 ## Components
-Orignially, the project uses the following components (albeit many of these could be substituted with their counterparts without much effort):
+Originally, the project uses the following components (albeit many of these could be substituted with their counterparts without much effort):
 * Arduino Nano
 * LM393 Soil moisture sensor
 * DS3231 RTC
@@ -21,9 +21,9 @@ The reason for taking measurements at intervals instead of continuously is to sl
 ### Watering detection
 The system measures the Exponential Moving Average of the sensor measurements and keeps track of the latest 30 values.
 Based on some thresholds, the monitor detects whether a significant increase in the moisture has occurred.
-Once a watering is detected, the system saves the watering time in its non-volatile memory and, henceforth, displays the time that has passed since last watering on the right-hand side of the display.
+Once watering is detected, the system saves the watering time in its non-volatile memory and, henceforth, displays the time that has passed since the last watering on the right-hand side of the display.
 A new watering can't be detected until at least 3 hours since the last one has passed.
-This behaviour aims to prevent multiple waterings being detected if the moisture level keeps raising for an extended period of time after the actual watering.
+This behaviour aims to prevent multiple watering events from being detected if the moisture level keeps raising for an extended period of time after the actual watering.
 
 ### Watering triggering
 If the user feels uncertain about the automatic watering detection mechanism, they can let the system know that the watering has happened by pressing a special button and holding it for 2 seconds.
