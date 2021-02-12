@@ -1,5 +1,3 @@
-#include <Wire.h>
-#include <EEPROM.h>
 #include <DS3231.h>
 #include <CircularBuffer.h>
 #include "Display.h"
