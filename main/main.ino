@@ -17,7 +17,7 @@ RTClib myRTC;
 #define BUTTON_INTERVAL 30L // Every 30ms
 #define BUTTON_PRESS_DUR 2L*1000 // Two seconds
 #define MEASUREMENT_INTERVAL 60L*1000 // Every minute
-#define MEASUREMENT_DUR 100 // 50ms of power before measuring
+#define MEASUREMENT_DUR 50 // 50ms of power before measuring
 #define CLOCK_INTERVAL 250L // Every 250ms
 #define HISTORY_EMA_BETA 0.9 // Averaging over 10 measurements
 #define WATERING_INTERVAL 3L*60*60 // At least three hours between waterings
