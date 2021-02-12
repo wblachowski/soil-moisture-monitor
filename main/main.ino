@@ -4,6 +4,7 @@
 #include <CircularBuffer.h>
 #include "Display.h"
 #include "Memory.h"
+#include "TimeGuard.h"
 
 Display display;
 Memory memory;
@@ -11,13 +12,16 @@ RTClib myRTC;
 
 #define MOISTURE_SENSOR A0
 #define MOISTURE_POWER 10
-#define MEASUREMENT_FREQ 60L*1000 // Every minute
+#define MEASUREMENT_INTERVAL 60L*1000 // Every minute
 #define MEASUREMENT_DUR 100 // 50ms of power before measuring
+#define CLOCK_INTERVAL 250L //Every 250ms
 #define HISTORY_EMA_BETA 0.9 //averaging over 10 measurements
 #define WATERING_INTERVAL 3L*60*60 //at least three hours between waterings
 #define WATERING_INCREASE_THRESHOLD 5 //at least 5 percent increase to detect watering
 
-unsigned long lastMeasurement = 0L;
+TimeGuard measurementGuard(MEASUREMENT_INTERVAL);
+TimeGuard clockGuard(CLOCK_INTERVAL);
+
 uint32_t lastWatering = 0L;
 CircularBuffer<int, 30> history;
 
@@ -29,8 +33,10 @@ void setup() {
 }
 
 void loop() {
-  display.displayTime(myRTC.now());
-  if (shouldMeasureMoisture()){
+  if(clockGuard.execute(millis())){
+      display.displayTime(myRTC.now());
+  }
+  if (measurementGuard.execute(millis())){
       display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
       int moisture = measureMoisture();   
       display.displayMoisture(moisture);
@@ -40,15 +46,7 @@ void loop() {
         lastWatering = myRTC.now().unixtime();
         memory.saveLastWatering(lastWatering);
       }
-      lastMeasurement = millis();
   }
-  delay(1000);
-}
-
-bool shouldMeasureMoisture(){
-  bool firstMeasurement = lastMeasurement==0L;
-  bool timePassed = millis() - lastMeasurement > MEASUREMENT_FREQ;
-  return firstMeasurement || timePassed;
 }
 
 int measureMoisture(){
