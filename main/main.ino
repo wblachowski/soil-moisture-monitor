@@ -5,17 +5,21 @@
 #include "TimeGuard.h"
 #include "ButtonHandler.h"
 
+// Pinout:
 #define MOISTURE_SENSOR A0
 #define MOISTURE_POWER 10
 #define BUTTON 2
-#define BUTTON_INTERVAL 30L // Every 30ms
-#define BUTTON_PRESS_DUR 2L*1000 // Two seconds
-#define MEASUREMENT_INTERVAL 60L*1000 // Every minute
-#define MEASUREMENT_DUR 50 // 50ms of power before measuring
-#define CLOCK_INTERVAL 250L // Every 250ms
-#define HISTORY_EMA_BETA 0.9 // Averaging over 10 measurements
-#define WATERING_INTERVAL 3L*60*60 // At least three hours between waterings
+
+// Constants:
+#define BUTTON_INTERVAL 30L // Button input read every 30ms
+#define BUTTON_PRESS_DUR 2L*1000 // Button has to be pressed for 2s
+#define MEASUREMENT_INTERVAL 60L*1000 // Moisture measured every minute
+#define MEASUREMENT_DUR 50L // Moisture measured after powering the sensor for 50ms
+#define CLOCK_INTERVAL 250L // Displayed time updated every 250ms
+#define HISTORY_EMA_BETA 0.9 // EMA with averaging over 10 measurements
+#define WATERING_INTERVAL 3L*60*60 // At least 3h since last watering to detect a new one
 #define WATERING_INCREASE_THRESHOLD 5 // At least 5 percent increase to detect watering
+#define WATERING_WINDOW 30 // Increase detection window
 
 Display display;
 Memory memory;
@@ -26,7 +30,7 @@ TimeGuard measurementGuard(MEASUREMENT_INTERVAL);
 TimeGuard clockGuard(CLOCK_INTERVAL);
 
 uint32_t lastWatering = 0L;
-CircularBuffer<int, 30> history;
+CircularBuffer<int, WATERING_WINDOW> history;
 ButtonHandler buttonHandler;
 
 void setup() {
