@@ -5,10 +5,6 @@
 #include "TimeGuard.h"
 #include "ButtonHandler.h"
 
-Display display;
-Memory memory;
-RTClib myRTC;
-
 #define MOISTURE_SENSOR A0
 #define MOISTURE_POWER 10
 #define BUTTON 2
@@ -20,6 +16,10 @@ RTClib myRTC;
 #define HISTORY_EMA_BETA 0.9 // Averaging over 10 measurements
 #define WATERING_INTERVAL 3L*60*60 // At least three hours between waterings
 #define WATERING_INCREASE_THRESHOLD 5 // At least 5 percent increase to detect watering
+
+Display display;
+Memory memory;
+RTClib myRTC;
 
 TimeGuard buttonGuard(BUTTON_INTERVAL);
 TimeGuard measurementGuard(MEASUREMENT_INTERVAL);
