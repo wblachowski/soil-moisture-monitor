@@ -5,6 +5,7 @@
 #include "Display.h"
 #include "Memory.h"
 #include "TimeGuard.h"
+#include "ButtonHandler.h"
 
 Display display;
 Memory memory;
@@ -13,7 +14,8 @@ RTClib myRTC;
 #define MOISTURE_SENSOR A0
 #define MOISTURE_POWER 10
 #define BUTTON 2
-#define BUTTON_INTERVAL 10
+#define BUTTON_INTERVAL 100
+#define BUTTON_PRESS_DUR 1L*1000 // a second
 #define MEASUREMENT_INTERVAL 60L*1000 // Every minute
 #define MEASUREMENT_DUR 100 // 50ms of power before measuring
 #define CLOCK_INTERVAL 250L //Every 250ms
@@ -27,8 +29,7 @@ TimeGuard clockGuard(CLOCK_INTERVAL);
 
 uint32_t lastWatering = 0L;
 CircularBuffer<int, 30> history;
-int lastButtonState=0;
-unsigned long lastButtonChange=0;
+ButtonHandler buttonHandler;
 
 void setup() {
   pinMode(MOISTURE_POWER, OUTPUT);
@@ -40,16 +41,7 @@ void setup() {
 
 void loop() {
   if(buttonGuard.execute(millis())){
-      int buttonState = digitalRead(BUTTON);
-    if(buttonState!=lastButtonState){
-    unsigned long now = millis();
-    if(!buttonState){
-      Serial.print("Released after ");
-      Serial.println(now - lastButtonChange);
-     }
-     lastButtonChange = now;
-     lastButtonState = buttonState;
-  }
+      Serial.println(buttonHandler.pressTime(digitalRead(BUTTON), millis())); 
   }
   if(clockGuard.execute(millis())){
       display.displayTime(myRTC.now());
