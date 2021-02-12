@@ -9,6 +9,7 @@ public:
     void displayMoisture(int percentage);
     void displayTime(DateTime time);
     void displayLastWatering(uint32_t now, uint32_t wateringTime);
+    void displayPressTime(double percentage);
 
 private:
     Adafruit_SSD1306 display;

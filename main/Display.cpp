@@ -61,9 +61,9 @@ void Display::displayTime(DateTime time)
 void Display::displayLastWatering(uint32_t now, uint32_t wateringTime)
 {
     display.setTextSize(1);
-    display.setCursor(80, 12);
+    display.setCursor(80, 11);
     display.print("Last wat:");
-    display.setCursor(80, 24);
+    display.setCursor(80, 22);
 
     uint32_t diff = now - wateringTime;
     int days = diff / 86400;
@@ -83,5 +83,12 @@ void Display::displayLastWatering(uint32_t now, uint32_t wateringTime)
         display.print(hours);
         display.print("h     ");
     }
+    display.display();
+}
+
+void Display::displayPressTime(double percentage)
+{
+    display.fillRect(0, 31, SCREEN_WIDTH, 1, WHITE);
+    display.fillRect(int(SCREEN_WIDTH * percentage), 31, SCREEN_WIDTH, 1, BLACK);
     display.display();
 }
