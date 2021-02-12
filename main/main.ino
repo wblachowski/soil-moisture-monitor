@@ -14,14 +14,14 @@ RTClib myRTC;
 #define MOISTURE_SENSOR A0
 #define MOISTURE_POWER 10
 #define BUTTON 2
-#define BUTTON_INTERVAL 100
-#define BUTTON_PRESS_DUR 1L*1000 // a second
+#define BUTTON_INTERVAL 30L // Every 30ms
+#define BUTTON_PRESS_DUR 2L*1000 // Two seconds
 #define MEASUREMENT_INTERVAL 60L*1000 // Every minute
 #define MEASUREMENT_DUR 100 // 50ms of power before measuring
-#define CLOCK_INTERVAL 250L //Every 250ms
-#define HISTORY_EMA_BETA 0.9 //averaging over 10 measurements
-#define WATERING_INTERVAL 3L*60*60 //at least three hours between waterings
-#define WATERING_INCREASE_THRESHOLD 5 //at least 5 percent increase to detect watering
+#define CLOCK_INTERVAL 250L // Every 250ms
+#define HISTORY_EMA_BETA 0.9 // Averaging over 10 measurements
+#define WATERING_INTERVAL 3L*60*60 // At least three hours between waterings
+#define WATERING_INCREASE_THRESHOLD 5 // At least 5 percent increase to detect watering
 
 TimeGuard buttonGuard(BUTTON_INTERVAL);
 TimeGuard measurementGuard(MEASUREMENT_INTERVAL);
@@ -41,7 +41,12 @@ void setup() {
 
 void loop() {
   if(buttonGuard.execute(millis())){
-      Serial.println(buttonHandler.pressTime(digitalRead(BUTTON), millis())); 
+      unsigned long pressTime = buttonHandler.pressTime(digitalRead(BUTTON), millis());
+      display.displayPressTime(((double)pressTime)/(BUTTON_PRESS_DUR));
+      if(pressTime >= BUTTON_PRESS_DUR){
+        reactToWatering();
+        buttonHandler.disableUntilChange();
+      }
   }
   if(clockGuard.execute(millis())){
       display.displayTime(myRTC.now());
@@ -53,8 +58,7 @@ void loop() {
       int historyInput = calculateHistoryInput(moisture);
       history.push(historyInput);
       if(wateringDetected()){
-        lastWatering = myRTC.now().unixtime();
-        memory.saveLastWatering(lastWatering);
+        reactToWatering();
       }
   }
 }
@@ -85,4 +89,10 @@ int wateringDetected(){
   bool wateringIntervalPassed = myRTC.now().unixtime() - lastWatering > WATERING_INTERVAL;
   bool moistureIncrease = history.last() - history.first() > WATERING_INCREASE_THRESHOLD;
   return enoughData && wateringIntervalPassed && moistureIncrease;
+}
+
+void reactToWatering(){
+  lastWatering = myRTC.now().unixtime();
+  memory.saveLastWatering(lastWatering);
+  display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
 }
