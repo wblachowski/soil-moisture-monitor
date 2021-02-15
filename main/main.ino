@@ -25,7 +25,6 @@ Display display;
 Memory memory;
 RTClib myRTC;
 
-TimeGuard buttonGuard(BUTTON_INTERVAL);
 TimeGuard measurementGuard(MEASUREMENT_INTERVAL);
 TimeGuard clockGuard(CLOCK_INTERVAL);
 
