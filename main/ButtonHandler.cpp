@@ -1,9 +1,10 @@
 #include "ButtonHandler.h"
 
-ButtonHandler::ButtonHandler()
+ButtonHandler::ButtonHandler(int dbncTime)
 {
     lastState = 0;
     lastChange = 0L;
+    debounceTime = dbncTime;
     disabled = false;
 }
 
@@ -22,7 +23,7 @@ unsigned long ButtonHandler::pressTime(int state, unsigned long now)
         return 0L;
     }
 
-    if (state)
+    if (state && state == lastState && (now - lastChange) > debounceTime)
     {
         return now - lastChange;
     }

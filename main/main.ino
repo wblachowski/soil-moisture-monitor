@@ -11,8 +11,8 @@
 #define BUTTON 2
 
 // Constants:
-#define BUTTON_INTERVAL 30L // Button input read every 30ms
 #define BUTTON_PRESS_DUR 2L*1000 // Button has to be pressed for 2s
+#define BUTTON_DEBOUNCE 30L // Button has to be held for at least 30ms
 #define MEASUREMENT_INTERVAL 60L*1000 // Moisture measured every minute
 #define MEASUREMENT_DUR 50L // Moisture measured after powering the sensor for 50ms
 #define CLOCK_INTERVAL 250L // Displayed time updated every 250ms
@@ -31,7 +31,7 @@ TimeGuard clockGuard(CLOCK_INTERVAL);
 
 uint32_t lastWatering = 0L;
 CircularBuffer<int, WATERING_WINDOW> history;
-ButtonHandler buttonHandler;
+ButtonHandler buttonHandler(BUTTON_DEBOUNCE);
 
 void setup() {
   pinMode(MOISTURE_POWER, OUTPUT);
@@ -42,14 +42,14 @@ void setup() {
 }
 
 void loop() {
-  if(buttonGuard.execute(millis())){
-      unsigned long pressTime = buttonHandler.pressTime(digitalRead(BUTTON), millis());
-      display.displayPressTime(((double)pressTime)/(BUTTON_PRESS_DUR));
-      if(pressTime >= BUTTON_PRESS_DUR){
-        reactToWatering();
-        buttonHandler.disableUntilChange();
-      }
+  unsigned long pressTime = buttonHandler.pressTime(digitalRead(BUTTON), millis());
+  Serial.println(pressTime);
+  display.displayPressTime(((double)pressTime)/(BUTTON_PRESS_DUR));
+  if(pressTime >= BUTTON_PRESS_DUR){
+    reactToWatering();
+    buttonHandler.disableUntilChange();
   }
+  
   if(clockGuard.execute(millis())){
       display.displayTime(myRTC.now());
   }
