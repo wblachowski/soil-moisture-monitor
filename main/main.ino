@@ -74,7 +74,7 @@ int measureMoisture(){
 
 int convertToPercentage(int value)
 {
-  return map(value, 1023, 0, 0, 100);
+  return map(value, 0, 1023, 0, 100);
 }
 
 int calculateHistoryInput(int moisture)
