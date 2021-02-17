@@ -40,6 +40,7 @@ void setup() {
   pinMode(BUTTON, INPUT);
   display.initialize();
   lastWatering = memory.readLastWatering();
+  buzz();
   Serial.begin(9600);
 }
 
@@ -99,6 +100,9 @@ void reactToWatering(){
   lastWatering = myRTC.now().unixtime();
   memory.saveLastWatering(lastWatering);
   display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
+}
+
+void buzz(){
   analogWrite(BUZZER, 255);
   delay(BUZZER_DUR);
   analogWrite(BUZZER, 0);
