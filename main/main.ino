@@ -8,6 +8,7 @@
 // Pinout:
 #define MOISTURE_SENSOR A0
 #define MOISTURE_POWER 10
+#define BUZZER 9
 #define BUTTON 2
 
 // Constants:
@@ -15,6 +16,7 @@
 #define BUTTON_DEBOUNCE 30L // Button has to be held for at least 30ms
 #define MEASUREMENT_INTERVAL 60L*1000 // Moisture measured every minute
 #define MEASUREMENT_DUR 50L // Moisture measured after powering the sensor for 50ms
+#define BUZZER_DUR 50L // Buzz for 30ms after watering detection
 #define CLOCK_INTERVAL 250L // Displayed time updated every 250ms
 #define HISTORY_EMA_BETA 0.9 // EMA with averaging over 10 measurements
 #define WATERING_INTERVAL 3L*60*60 // At least 3h since last watering to detect a new one
@@ -34,6 +36,7 @@ ButtonHandler buttonHandler(BUTTON_DEBOUNCE);
 
 void setup() {
   pinMode(MOISTURE_POWER, OUTPUT);
+  pinMode(BUZZER, OUTPUT);
   pinMode(BUTTON, INPUT);
   display.initialize();
   lastWatering = memory.readLastWatering();
@@ -96,4 +99,7 @@ void reactToWatering(){
   lastWatering = myRTC.now().unixtime();
   memory.saveLastWatering(lastWatering);
   display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
+  analogWrite(BUZZER, 255);
+  delay(BUZZER_DUR);
+  analogWrite(BUZZER, 0);
 }
