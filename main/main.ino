@@ -13,7 +13,7 @@
 
 // Constants:
 #define BUTTON_PRESS_DUR 2L*1000 // Button has to be pressed for 2s
-#define BUTTON_DEBOUNCE 30L // Button has to be held for at least 30ms
+#define BUTTON_DEBOUNCE 30L // Same state for at least 30ms
 #define MEASUREMENT_INTERVAL 60L*1000 // Moisture measured every minute
 #define MEASUREMENT_DUR 50L // Moisture measured after powering the sensor for 50ms
 #define BUZZER_DUR 50L // Buzz for 30ms after watering detection
