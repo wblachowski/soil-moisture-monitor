@@ -20,8 +20,8 @@
 #define CLOCK_INTERVAL 250L             // Displayed time updated every 250ms
 #define HISTORY_EMA_BETA 0.9            // EMA with averaging over 10 measurements
 #define WATERING_INTERVAL 3L * 60 * 60  // At least 3h since last watering to detect a new one
-#define WATERING_INCREASE_THRESHOLD 10  // At least 10 percent increase to detect watering
-#define WATERING_WINDOW 15              // Increase detection window
+#define WATERING_INCREASE_THRESHOLD 5  // At least 10 percent increase to detect watering
+#define WATERING_WINDOW 30              // Increase detection window
 
 Display display;
 Memory memory;
