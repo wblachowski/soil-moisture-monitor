@@ -110,6 +110,7 @@ void reactToWatering()
   lastWatering = myRTC.now().unixtime();
   memory.saveLastWatering(lastWatering);
   display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
+  buzz();
 }
 
 void buzz()
