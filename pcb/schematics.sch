@@ -8051,6 +8051,121 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="switch-dil" urn="urn:adsk.eagle:library:375">
+<description>&lt;b&gt;DIL Switches and Code Switches&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="DIP02YL" urn="urn:adsk.eagle:footprint:27167/1" library_version="2">
+<description>&lt;b&gt;DIL/CODE SWITCH&lt;/b&gt;&lt;p&gt;</description>
+<wire x1="3.81" y1="-3.81" x2="3.81" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="3.81" x2="-3.81" y2="-3.81" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.27" x2="-0.635" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-0.635" y2="-0.9398" width="0.254" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.905" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-1.905" y2="-0.635" width="0.254" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="1.905" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="1.905" y2="-0.9398" width="0.254" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="0.635" y2="1.27" width="0.254" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="0.635" y2="-0.635" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="-0.9398" x2="-0.635" y2="-0.9398" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="-0.9398" x2="-1.905" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="-0.635" y1="-0.9398" x2="-0.635" y2="-0.635" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="-0.635" x2="-0.635" y2="-0.635" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="-0.635" x2="-1.905" y2="-0.9398" width="0.254" layer="21"/>
+<wire x1="-0.635" y1="-0.635" x2="-0.635" y2="1.27" width="0.254" layer="21"/>
+<wire x1="0.635" y1="-0.9398" x2="1.905" y2="-0.9398" width="0.254" layer="21"/>
+<wire x1="0.635" y1="-0.9398" x2="0.635" y2="-1.27" width="0.254" layer="21"/>
+<wire x1="1.905" y1="-0.9398" x2="1.905" y2="-0.635" width="0.254" layer="21"/>
+<wire x1="0.635" y1="-0.635" x2="1.905" y2="-0.635" width="0.254" layer="21"/>
+<wire x1="0.635" y1="-0.635" x2="0.635" y2="-0.9398" width="0.254" layer="21"/>
+<wire x1="1.905" y1="-0.635" x2="1.905" y2="1.27" width="0.254" layer="21"/>
+<wire x1="3.81" y1="-3.81" x2="2.032" y2="-3.81" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-3.81" x2="-2.032" y2="-3.81" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="3.81" x2="-2.032" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="3.81" x2="2.032" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="-2.032" y1="-3.81" x2="-0.508" y2="-3.81" width="0.1524" layer="51"/>
+<wire x1="-0.508" y1="-3.81" x2="0.508" y2="-3.81" width="0.1524" layer="21"/>
+<wire x1="0.508" y1="-3.81" x2="2.032" y2="-3.81" width="0.1524" layer="51"/>
+<wire x1="2.032" y1="3.81" x2="0.508" y2="3.81" width="0.1524" layer="51"/>
+<wire x1="0.508" y1="3.81" x2="-0.508" y2="3.81" width="0.1524" layer="21"/>
+<wire x1="-0.508" y1="3.81" x2="-2.032" y2="3.81" width="0.1524" layer="51"/>
+<circle x="-2.794" y="-2.794" radius="0.254" width="0.1524" layer="21"/>
+<pad name="1" x="-1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="-1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<text x="-1.651" y="-3.048" size="1.27" layer="51" ratio="10">1</text>
+<text x="0.889" y="-3.048" size="1.27" layer="51" ratio="10">2</text>
+<text x="-4.1402" y="-3.7592" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="3.5052" y="-3.1496" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<text x="-1.651" y="1.7018" size="1.27" layer="51" ratio="10">ON</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="DIP02YL" urn="urn:adsk.eagle:package:27254/2" type="model" library_version="2">
+<description>DIL/CODE SWITCH</description>
+<packageinstances>
+<packageinstance name="DIP02YL"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="DIP02" urn="urn:adsk.eagle:symbol:27093/1" library_version="2">
+<wire x1="-1.905" y1="5.08" x2="-1.905" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="-1.905" y1="5.08" x2="4.445" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="4.445" y1="-5.08" x2="4.445" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="4.445" y1="-5.08" x2="-1.905" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="0.508" y1="-2.54" x2="-0.508" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-0.508" y1="2.54" x2="0.508" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="0.508" y1="2.54" x2="0.508" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-0.508" y1="-2.54" x2="-0.508" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="3.048" y1="-2.54" x2="2.032" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.032" y1="2.54" x2="3.048" y2="2.54" width="0.1524" layer="94"/>
+<wire x1="3.048" y1="2.54" x2="3.048" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.032" y1="-2.54" x2="2.032" y2="2.54" width="0.1524" layer="94"/>
+<text x="-2.54" y="-5.08" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="6.985" y="-5.08" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<text x="-0.254" y="-4.064" size="0.9906" layer="94" ratio="14">1</text>
+<text x="2.159" y="-4.064" size="0.9906" layer="94" ratio="14">2</text>
+<text x="-0.762" y="3.048" size="0.9906" layer="94" ratio="14">ON</text>
+<rectangle x1="-0.254" y1="-2.286" x2="0.254" y2="0" layer="94"/>
+<rectangle x1="2.286" y1="-2.286" x2="2.794" y2="0" layer="94"/>
+<pin name="3" x="2.54" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="4" x="0" y="7.62" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="1" x="0" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="2" x="2.54" y="-7.62" visible="pad" length="short" direction="pas" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DIP02YL" urn="urn:adsk.eagle:component:27355/2" prefix="S" uservalue="yes" library_version="2">
+<description>&lt;b&gt;DIL/CODE SWITCH&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="DIP02" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DIP02YL">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+<connect gate="1" pin="4" pad="4"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:27254/2"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -8070,6 +8185,9 @@ Source: AVX .. aphvc.pdf</description>
 <part name="X1" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2051" device="" package3d_urn="urn:adsk.eagle:package:8078636/1"/>
 <part name="X2" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2051" device="" package3d_urn="urn:adsk.eagle:package:8078636/1"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="025-025X050" package3d_urn="urn:adsk.eagle:package:23629/2"/>
+<part name="SWITCH" library="switch-dil" library_urn="urn:adsk.eagle:library:375" deviceset="DIP02YL" device="" package3d_urn="urn:adsk.eagle:package:27254/2"/>
+<part name="BTNR1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:6240596/1"/>
+<part name="BTNR2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:6240596/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -8135,6 +8253,18 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="C1" gate="G$1" x="-91.44" y="78.74" smashed="yes">
 <attribute name="NAME" x="-89.916" y="79.121" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-89.916" y="74.041" size="1.778" layer="96"/>
+</instance>
+<instance part="SWITCH" gate="1" x="-106.68" y="38.1" smashed="yes">
+<attribute name="NAME" x="-109.22" y="33.02" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-99.695" y="33.02" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="BTNR1" gate="G$1" x="-10.16" y="86.36" smashed="yes">
+<attribute name="NAME" x="-13.97" y="87.8586" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-13.97" y="83.058" size="1.778" layer="96"/>
+</instance>
+<instance part="BTNR2" gate="G$1" x="-10.16" y="88.9" smashed="yes">
+<attribute name="NAME" x="-13.97" y="90.3986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-13.97" y="85.598" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -8204,6 +8334,16 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="C1" gate="G$1" pin="2"/>
 <junction x="-91.44" y="73.66"/>
 <label x="-99.06" y="73.66" size="1.778" layer="95"/>
+<wire x1="-63.5" y1="83.82" x2="-63.5" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="-63.5" y1="88.9" x2="-48.26" y2="88.9" width="0.1524" layer="91"/>
+<junction x="-63.5" y="83.82"/>
+<wire x1="-48.26" y1="88.9" x2="-48.26" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="93.98" x2="-5.08" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="BTNR2" gate="G$1" pin="2"/>
+<wire x1="-5.08" y1="93.98" x2="-5.08" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="BTNR1" gate="G$1" pin="2"/>
+<wire x1="-5.08" y1="86.36" x2="-5.08" y2="88.9" width="0.1524" layer="91"/>
+<junction x="-5.08" y="88.9"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -8246,6 +8386,15 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="-91.44" y1="83.82" x2="-99.06" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="81.28" x2="-91.44" y2="83.82" width="0.1524" layer="91"/>
 <junction x="-91.44" y="83.82"/>
+<wire x1="-83.82" y1="78.74" x2="-83.82" y2="53.34" width="0.1524" layer="91"/>
+<junction x="-83.82" y="78.74"/>
+<pinref part="SWITCH" gate="1" pin="4"/>
+<wire x1="-83.82" y1="53.34" x2="-104.14" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="53.34" x2="-106.68" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="53.34" x2="-106.68" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="SWITCH" gate="1" pin="3"/>
+<wire x1="-104.14" y1="45.72" x2="-104.14" y2="53.34" width="0.1524" layer="91"/>
+<junction x="-104.14" y="53.34"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -8268,12 +8417,12 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="PD2(INT0)"/>
-<wire x1="-15.24" y1="86.36" x2="-45.72" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="-45.72" y1="86.36" x2="-45.72" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-45.72" y1="91.44" x2="-45.72" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="-45.72" y1="25.4" x2="-88.9" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="BTN" gate="1" pin="P"/>
 <wire x1="-88.9" y1="25.4" x2="-88.9" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="PD0(RXD)"/>
+<wire x1="-45.72" y1="91.44" x2="-15.24" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -8284,6 +8433,30 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="-2.54" y1="27.94" x2="-22.86" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="SOIL" gate="G$1" pin="4"/>
 <wire x1="-22.86" y1="27.94" x2="-22.86" y2="20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD1(TXD)"/>
+<wire x1="-15.24" y1="88.9" x2="-43.18" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="88.9" x2="-43.18" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="SWITCH" gate="1" pin="1"/>
+<wire x1="-43.18" y1="22.86" x2="-106.68" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="-106.68" y1="22.86" x2="-106.68" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="BTNR2" gate="G$1" pin="1"/>
+<junction x="-15.24" y="88.9"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="SWITCH" gate="1" pin="2"/>
+<wire x1="-104.14" y1="30.48" x2="-104.14" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="20.32" x2="-40.64" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="PD2(INT0)"/>
+<wire x1="-40.64" y1="20.32" x2="-40.64" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="86.36" x2="-15.24" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="BTNR1" gate="G$1" pin="1"/>
+<junction x="-15.24" y="86.36"/>
 </segment>
 </net>
 </nets>
