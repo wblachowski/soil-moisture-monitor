@@ -9,7 +9,7 @@
 #define MOISTURE_SENSOR A0
 #define MOISTURE_POWER 10
 #define BUZZER 9
-#define BUTTON 2
+#define BUTTON 0
 
 // Constants:
 #define BUTTON_PRESS_DUR 2L * 1000      // Button has to be pressed for 2s
