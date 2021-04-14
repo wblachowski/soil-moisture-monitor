@@ -24,6 +24,7 @@
 #define WATERING_INTERVAL 3L * 60 * 60  // At least 3h since last watering to detect a new one
 #define WATERING_INCREASE_THRESHOLD 5   // At least 5 percent increase to detect watering
 #define WATERING_WINDOW 30              // Increase detection window
+#define DISPLAY_MODE_INTERVAL 30L       // Display mode probed each 30 ms
 
 Display display;
 Memory memory;
@@ -31,8 +32,11 @@ RTClib myRTC;
 
 TimeGuard measurementGuard(MEASUREMENT_INTERVAL);
 TimeGuard clockGuard(CLOCK_INTERVAL);
+TimeGuard displayModeGuard(DISPLAY_MODE_INTERVAL);
 
 uint32_t lastWatering = 0L;
+int lastDisplayRotation = 0;
+int lastMoisture = 0;
 CircularBuffer<int, WATERING_WINDOW> history;
 ButtonHandler buttonHandler(BUTTON_DEBOUNCE);
 
@@ -43,9 +47,8 @@ void setup()
   pinMode(BUTTON, INPUT);
   pinMode(DISPLAY_MODE, INPUT);
   pinMode(BUZZER_MODE, INPUT);
-  int display_mode = digitalRead(DISPLAY_MODE);
-
-  display.initialize(display_mode);
+  lastDisplayRotation = digitalRead(DISPLAY_MODE);
+  display.initialize(lastDisplayRotation);
   lastWatering = memory.readLastWatering();
   buzz();
 }
@@ -59,7 +62,16 @@ void loop()
     reactToWatering();
     buttonHandler.disableUntilChange();
   }
-
+  if (displayModeGuard.execute(millis())){
+    int displayRotation = digitalRead(DISPLAY_MODE);
+    if (lastDisplayRotation != displayRotation){
+       display.setRotation(displayRotation);
+       display.displayTime(myRTC.now());
+       display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
+       display.displayMoisture(lastMoisture);
+       lastDisplayRotation = displayRotation;
+    }
+  }
   if (clockGuard.execute(millis()))
   {
     display.displayTime(myRTC.now());
@@ -67,9 +79,9 @@ void loop()
   if (measurementGuard.execute(millis()))
   {
     display.displayLastWatering(myRTC.now().unixtime(), lastWatering);
-    int moisture = measureMoisture();
-    display.displayMoisture(moisture);
-    int historyInput = calculateHistoryInput(moisture);
+    lastMoisture = measureMoisture();
+    display.displayMoisture(lastMoisture);
+    int historyInput = calculateHistoryInput(lastMoisture);
     history.push(historyInput);
     if (wateringDetected())
     {

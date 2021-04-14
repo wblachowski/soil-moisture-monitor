@@ -11,16 +11,21 @@ Display::Display()
     display = Adafruit_SSD1306(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 }
 
-void Display::initialize(int orientation)
+void Display::initialize(int rotation)
 {
     if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
     {
         for (;;)
             ;
     }
-    display.setRotation(orientation ? 0 : 2);
-    display.clearDisplay();
+    Display::setRotation(rotation);
     display.setTextColor(WHITE, BLACK);
+}
+
+void Display::setRotation(int rotation)
+{
+    display.clearDisplay();
+    display.setRotation(rotation ? 0 : 2);
 }
 
 void Display::displayMoisture(int percentage)

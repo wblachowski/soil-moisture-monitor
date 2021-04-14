@@ -5,7 +5,8 @@ class Display
 {
 public:
     Display();
-    void initialize(int orientation);
+    void initialize(int rotation);
+    void setRotation(int rotation);
     void displayMoisture(int percentage);
     void displayTime(DateTime time);
     void displayLastWatering(uint32_t now, uint32_t wateringTime);
