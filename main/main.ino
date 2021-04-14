@@ -10,6 +10,8 @@
 #define MOISTURE_POWER 10
 #define BUZZER 9
 #define BUTTON 0
+#define DISPLAY_MODE 1
+#define BUZZER_MODE 2
 
 // Constants:
 #define BUTTON_PRESS_DUR 2L * 1000      // Button has to be pressed for 2s
@@ -39,16 +41,19 @@ void setup()
   pinMode(MOISTURE_POWER, OUTPUT);
   pinMode(BUZZER, OUTPUT);
   pinMode(BUTTON, INPUT);
-  display.initialize();
+  pinMode(DISPLAY_MODE, INPUT);
+  pinMode(BUZZER_MODE, INPUT);
+  int display_mode = digitalRead(DISPLAY_MODE);
+  int buzzer_mode = digitalRead(BUZZER_MODE);
+
+  display.initialize(display_mode);
   lastWatering = memory.readLastWatering();
   buzz();
-  Serial.begin(9600);
 }
 
 void loop()
 {
   unsigned long pressTime = buttonHandler.pressTime(digitalRead(BUTTON), millis());
-  Serial.println(pressTime);
   display.displayPressTime(((double)pressTime) / (BUTTON_PRESS_DUR));
   if (pressTime >= BUTTON_PRESS_DUR)
   {
