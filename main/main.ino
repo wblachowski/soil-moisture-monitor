@@ -44,7 +44,6 @@ void setup()
   pinMode(DISPLAY_MODE, INPUT);
   pinMode(BUZZER_MODE, INPUT);
   int display_mode = digitalRead(DISPLAY_MODE);
-  int buzzer_mode = digitalRead(BUZZER_MODE);
 
   display.initialize(display_mode);
   lastWatering = memory.readLastWatering();
@@ -120,7 +119,9 @@ void reactToWatering()
 
 void buzz()
 {
-  analogWrite(BUZZER, 255);
-  delay(BUZZER_DUR);
-  analogWrite(BUZZER, 0);
+  if(digitalRead(BUZZER_MODE)){
+    analogWrite(BUZZER, 255);
+    delay(BUZZER_DUR);
+    analogWrite(BUZZER, 0);
+  }
 }
