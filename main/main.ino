@@ -132,8 +132,6 @@ void reactToWatering()
 void buzz()
 {
   if(digitalRead(BUZZER_MODE)){
-    analogWrite(BUZZER, 255);
-    delay(BUZZER_DUR);
-    analogWrite(BUZZER, 0);
+      tone(BUZZER, 3000, BUZZER_DUR);
   }
 }
