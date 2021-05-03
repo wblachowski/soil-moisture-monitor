@@ -421,41 +421,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <text x="-16.51" y="1.27" size="0.762" layer="21" align="center-left">SCL</text>
 <text x="-16.51" y="3.81" size="0.762" layer="21" align="center-left">SDA</text>
 </package>
-<package name="SOUND-BUZZER">
-<description>&lt;b&gt;Sound Buzzer Module&lt;/b&gt;</description>
-<wire x1="-16.51" y1="6.985" x2="16.51" y2="6.985" width="0.127" layer="21"/>
-<wire x1="16.51" y1="6.985" x2="16.51" y2="-6.985" width="0.127" layer="21"/>
-<wire x1="16.51" y1="-6.985" x2="-16.51" y2="-6.985" width="0.127" layer="21"/>
-<wire x1="-16.51" y1="-6.985" x2="-16.51" y2="6.985" width="0.127" layer="21"/>
-<pad name="1" x="-11.43" y="-2.54" drill="1" shape="square"/>
-<pad name="2" x="-11.43" y="0" drill="1"/>
-<pad name="3" x="-11.43" y="2.54" drill="1"/>
-<circle x="9.525" y="0" radius="6.35" width="0.127" layer="21"/>
-<hole x="0" y="0" drill="3.2"/>
-<wire x1="-12.7" y1="3.175" x2="-12.065" y2="3.81" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="3.81" x2="-10.795" y2="3.81" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="3.81" x2="-10.16" y2="3.175" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="3.175" x2="-10.16" y2="1.905" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="1.905" x2="-10.795" y2="1.27" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="1.27" x2="-10.16" y2="0.635" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="0.635" x2="-10.16" y2="-0.635" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="-0.635" x2="-10.795" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="-1.27" x2="-10.16" y2="-1.905" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="-1.905" x2="-10.16" y2="-3.175" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="-3.175" x2="-10.795" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="-3.81" x2="-12.065" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="-3.81" x2="-12.7" y2="-3.175" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="-3.175" x2="-12.7" y2="-1.905" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="-1.905" x2="-12.065" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="-1.27" x2="-12.7" y2="-0.635" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="-0.635" x2="-12.7" y2="0.635" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="0.635" x2="-12.065" y2="1.27" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="1.27" x2="-12.7" y2="1.905" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="1.905" x2="-12.7" y2="3.175" width="0.127" layer="21"/>
-<text x="9.525" y="0" size="1.016" layer="21" align="center">BUZZER</text>
-<text x="0" y="7.62" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-7.62" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
-</package>
 </packages>
 </library>
 <library name="con-molex" urn="urn:adsk.eagle:library:165">
@@ -1632,6 +1597,37 @@ grid 2.5 mm, outline 2.5 x 5 mm</description>
 </package3d>
 </packages3d>
 </library>
+<library name="buzzer" urn="urn:adsk.eagle:library:113">
+<description>&lt;b&gt;Speakers and Buzzers&lt;/b&gt;&lt;p&gt;
+&lt;ul&gt;Distributors:
+&lt;li&gt;Buerklin
+&lt;li&gt;Spoerle
+&lt;li&gt;Schukat
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="F/QMX" urn="urn:adsk.eagle:footprint:5239/1" library_version="2">
+<description>&lt;b&gt;BUZZER&lt;/b&gt;</description>
+<wire x1="3.175" y1="2.54" x2="4.191" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="3.683" y1="2.032" x2="3.683" y2="3.048" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="6.096" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.143" width="0.1524" layer="21"/>
+<circle x="3.683" y="2.54" radius="0.889" width="0.1524" layer="21"/>
+<pad name="-" x="-3.2512" y="0" drill="0.9144" diameter="2.159" shape="octagon"/>
+<pad name="+" x="3.2512" y="0" drill="0.9144" diameter="2.159" shape="octagon"/>
+<text x="4.699" y="4.445" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.556" y="-3.81" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="F/QMX" urn="urn:adsk.eagle:package:5278/1" type="box" library_version="2">
+<description>BUZZER</description>
+<packageinstances>
+<packageinstance name="F/QMX"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1851,10 +1847,6 @@ design rules under a new name.</description>
 <attribute name="NAME" x="37.75" y="39.07" size="1.27" layer="25" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="22.51" y="39.07" size="1.27" layer="27" rot="R270" align="top-center"/>
 </element>
-<element name="U$2" library="diy-modules" package="SOUND-BUZZER" value="SOUND-BUZZER" x="14.62" y="18.21" smashed="yes" rot="R90">
-<attribute name="NAME" x="7" y="18.21" size="1.27" layer="25" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="22.24" y="18.21" size="1.27" layer="27" rot="R90" align="top-center"/>
-</element>
 <element name="SOIL" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="1X04-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1" value="1X4-BIG" x="41.83" y="23.1" smashed="yes">
 <attribute name="NAME" x="40.4838" y="24.9288" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="40.56" y="19.925" size="1.27" layer="27"/>
@@ -1899,6 +1891,19 @@ design rules under a new name.</description>
 <attribute name="NAME" x="14.46" y="38.2954" size="0.9906" layer="25" ratio="12"/>
 <attribute name="VALUE" x="15.3744" y="36.5174" size="0.9906" layer="27" ratio="12"/>
 </element>
+<element name="BUZZ" library="buzzer" library_urn="urn:adsk.eagle:library:113" package="F/QMX" package3d_urn="urn:adsk.eagle:package:5278/1" value="F/QMX" x="16.3" y="10.3" smashed="yes" rot="R180">
+<attribute name="MF" value="" x="16.3" y="10.3" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="16.3" y="10.3" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="11.601" y="5.855" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="OC_FARNELL" value="unknown" x="16.3" y="10.3" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="16.3" y="10.3" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="POPULARITY" value="4" x="16.3" y="10.3" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="19.856" y="14.11" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="BTNBUZZ" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="0204/7" package3d_urn="urn:adsk.eagle:package:6240596/1" value="" x="17" y="18.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="19.54" y="17.4046" size="0.9906" layer="25" ratio="12" rot="R180"/>
+<attribute name="VALUE" x="18.6256" y="19.1826" size="0.9906" layer="27" ratio="12" rot="R180"/>
+</element>
 </elements>
 <signals>
 <signal name="N$1">
@@ -1934,7 +1939,6 @@ design rules under a new name.</description>
 <wire x1="35.9492" y1="46.9492" x2="37.8222" y2="46.8222" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="GND">
-<contactref element="U$2" pad="1"/>
 <contactref element="IC1" pad="8"/>
 <contactref element="U$1" pad="1"/>
 <contactref element="BTNR" pad="2"/>
@@ -1963,17 +1967,18 @@ design rules under a new name.</description>
 </polygon>
 <contactref element="BTNR2" pad="2"/>
 <contactref element="BTNR1" pad="2"/>
+<contactref element="BUZZ" pad="-"/>
 </signal>
 <signal name="N$4">
 <contactref element="IC1" pad="15"/>
-<contactref element="U$2" pad="3"/>
 <wire x1="39" y1="20.2286" x2="33.9586" y2="20.2286" width="1.016" layer="16"/>
 <wire x1="33.94" y1="20.21" x2="33.9586" y2="20.2286" width="1.016" layer="16"/>
 <wire x1="39" y1="20.2286" x2="39" y2="12" width="1.016" layer="16"/>
-<wire x1="39" y1="12" x2="37" y2="10" width="1.016" layer="16"/>
-<wire x1="12" y1="10" x2="12" y2="6.86" width="1.016" layer="16"/>
-<wire x1="12" y1="6.86" x2="12.08" y2="6.78" width="1.016" layer="16"/>
-<wire x1="37" y1="10" x2="12" y2="10" width="1.016" layer="16"/>
+<wire x1="39" y1="12" x2="36.56" y2="9.56" width="1.016" layer="16"/>
+<wire x1="26.9" y1="9.56" x2="36.56" y2="9.56" width="1.016" layer="16"/>
+<contactref element="BTNBUZZ" pad="1"/>
+<wire x1="20.81" y1="18.7" x2="20.81" y2="15.65" width="0.8128" layer="16"/>
+<wire x1="20.81" y1="15.65" x2="26.9" y2="9.56" width="0.8128" layer="16"/>
 </signal>
 <signal name="N$5">
 <contactref element="U$1" pad="2"/>
@@ -2077,6 +2082,12 @@ design rules under a new name.</description>
 <wire x1="26.31" y1="45.61" x2="26.3" y2="45.6" width="1.016" layer="16"/>
 <wire x1="16" y1="40.7" x2="16" y2="34.3" width="1.016" layer="16"/>
 <wire x1="16" y1="34.3" x2="13.19" y2="34.3" width="1.016" layer="16"/>
+</signal>
+<signal name="N$11">
+<contactref element="BUZZ" pad="+"/>
+<contactref element="BTNBUZZ" pad="2"/>
+<wire x1="13.0488" y1="10.3" x2="13.0488" y2="18.5588" width="0.8128" layer="16"/>
+<wire x1="13.0488" y1="18.5588" x2="13.19" y2="18.7" width="0.8128" layer="16"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

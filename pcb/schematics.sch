@@ -185,41 +185,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <text x="-16.51" y="1.27" size="0.762" layer="21" align="center-left">SCL</text>
 <text x="-16.51" y="3.81" size="0.762" layer="21" align="center-left">SDA</text>
 </package>
-<package name="SOUND-BUZZER">
-<description>&lt;b&gt;Sound Buzzer Module&lt;/b&gt;</description>
-<wire x1="-16.51" y1="6.985" x2="16.51" y2="6.985" width="0.127" layer="21"/>
-<wire x1="16.51" y1="6.985" x2="16.51" y2="-6.985" width="0.127" layer="21"/>
-<wire x1="16.51" y1="-6.985" x2="-16.51" y2="-6.985" width="0.127" layer="21"/>
-<wire x1="-16.51" y1="-6.985" x2="-16.51" y2="6.985" width="0.127" layer="21"/>
-<pad name="1" x="-11.43" y="-2.54" drill="1" shape="square"/>
-<pad name="2" x="-11.43" y="0" drill="1"/>
-<pad name="3" x="-11.43" y="2.54" drill="1"/>
-<circle x="9.525" y="0" radius="6.35" width="0.127" layer="21"/>
-<hole x="0" y="0" drill="3.2"/>
-<wire x1="-12.7" y1="3.175" x2="-12.065" y2="3.81" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="3.81" x2="-10.795" y2="3.81" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="3.81" x2="-10.16" y2="3.175" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="3.175" x2="-10.16" y2="1.905" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="1.905" x2="-10.795" y2="1.27" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="1.27" x2="-10.16" y2="0.635" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="0.635" x2="-10.16" y2="-0.635" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="-0.635" x2="-10.795" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="-1.27" x2="-10.16" y2="-1.905" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="-1.905" x2="-10.16" y2="-3.175" width="0.127" layer="21"/>
-<wire x1="-10.16" y1="-3.175" x2="-10.795" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="-10.795" y1="-3.81" x2="-12.065" y2="-3.81" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="-3.81" x2="-12.7" y2="-3.175" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="-3.175" x2="-12.7" y2="-1.905" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="-1.905" x2="-12.065" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="-1.27" x2="-12.7" y2="-0.635" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="-0.635" x2="-12.7" y2="0.635" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="0.635" x2="-12.065" y2="1.27" width="0.127" layer="21"/>
-<wire x1="-12.065" y1="1.27" x2="-12.7" y2="1.905" width="0.127" layer="21"/>
-<wire x1="-12.7" y1="1.905" x2="-12.7" y2="3.175" width="0.127" layer="21"/>
-<text x="9.525" y="0" size="1.016" layer="21" align="center">BUZZER</text>
-<text x="0" y="7.62" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-7.62" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
-</package>
 </packages>
 <symbols>
 <symbol name="DISPLAY-OLED-128X32">
@@ -247,20 +212,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <text x="12.7" y="-2.54" size="1.778" layer="94" align="bottom-right">128x32</text>
 <text x="12.7" y="0" size="1.778" layer="94" align="bottom-right">OLED</text>
 </symbol>
-<symbol name="SOUND-BUZZER">
-<description>&lt;b&gt;Sound Buzzer Module&lt;/b&gt;</description>
-<pin name="VCC" x="-17.78" y="2.54" length="middle" direction="pwr"/>
-<pin name="EN" x="-17.78" y="0" length="middle" direction="in"/>
-<pin name="GND" x="-17.78" y="-2.54" length="middle" direction="pwr"/>
-<wire x1="-12.7" y1="7.62" x2="-12.7" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="-12.7" y1="-7.62" x2="15.24" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-7.62" x2="15.24" y2="7.62" width="0.254" layer="94"/>
-<wire x1="15.24" y1="7.62" x2="-12.7" y2="7.62" width="0.254" layer="94"/>
-<circle x="7.62" y="0" radius="6.35" width="0.254" layer="94"/>
-<text x="7.62" y="0" size="2.54" layer="94" align="center">BUZZ</text>
-<text x="-12.7" y="12.7" size="1.778" layer="95">&gt;NAME</text>
-<text x="-12.7" y="10.16" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="DISPLAY-OLED-128X32">
@@ -284,27 +235,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <connect gate="G$1" pin="SCL" pad="3"/>
 <connect gate="G$1" pin="SDA" pad="4"/>
 <connect gate="G$1" pin="VCC" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="SOUND-BUZZER">
-<description>&lt;b&gt;Sound Buzzer Module&lt;/b&gt;
-&lt;p&gt;&lt;b&gt;&lt;a href="http://www.ebay.com/sch/passive+buzzer+beep+module"&gt;Click here to find device on ebay.com&lt;/a&gt;&lt;/b&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="photo" src="http://www.diymodules.org/img/device-photo.php?name=SOUND-BUZZER"&gt;&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="SOUND-BUZZER" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SOUND-BUZZER">
-<connects>
-<connect gate="G$1" pin="EN" pad="2"/>
-<connect gate="G$1" pin="GND" pad="1"/>
-<connect gate="G$1" pin="VCC" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8166,6 +8096,79 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="buzzer" urn="urn:adsk.eagle:library:113">
+<description>&lt;b&gt;Speakers and Buzzers&lt;/b&gt;&lt;p&gt;
+&lt;ul&gt;Distributors:
+&lt;li&gt;Buerklin
+&lt;li&gt;Spoerle
+&lt;li&gt;Schukat
+&lt;/ul&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="F/QMX" urn="urn:adsk.eagle:footprint:5239/1" library_version="2">
+<description>&lt;b&gt;BUZZER&lt;/b&gt;</description>
+<wire x1="3.175" y1="2.54" x2="4.191" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="3.683" y1="2.032" x2="3.683" y2="3.048" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="6.096" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="1.143" width="0.1524" layer="21"/>
+<circle x="3.683" y="2.54" radius="0.889" width="0.1524" layer="21"/>
+<pad name="-" x="-3.2512" y="0" drill="0.9144" diameter="2.159" shape="octagon"/>
+<pad name="+" x="3.2512" y="0" drill="0.9144" diameter="2.159" shape="octagon"/>
+<text x="4.699" y="4.445" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-3.556" y="-3.81" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="F/QMX" urn="urn:adsk.eagle:package:5278/1" type="box" library_version="2">
+<description>BUZZER</description>
+<packageinstances>
+<packageinstance name="F/QMX"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="BWS" urn="urn:adsk.eagle:symbol:5237/1" library_version="2">
+<wire x1="-2.54" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94" curve="180"/>
+<wire x1="-2.54" y1="5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="3.175" x2="1.27" y2="3.175" width="0.1524" layer="94" curve="-180" cap="flat"/>
+<wire x1="1.27" y1="3.175" x2="2.54" y2="3.175" width="0.1524" layer="94" curve="180" cap="flat"/>
+<wire x1="2.54" y1="-2.54" x2="2.54" y2="1.397" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.54" x2="0" y2="1.397" width="0.1524" layer="94"/>
+<text x="-2.54" y="6.35" size="1.778" layer="95">&gt;NAME</text>
+<text x="6.35" y="0" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="2" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="1" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="F/QMX" urn="urn:adsk.eagle:component:5313/2" prefix="SG" library_version="2">
+<description>&lt;b&gt;BUZZER&lt;/b&gt;&lt;p&gt; Source: Buerklin</description>
+<gates>
+<gate name="G$1" symbol="BWS" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="F/QMX">
+<connects>
+<connect gate="G$1" pin="1" pad="-"/>
+<connect gate="G$1" pin="2" pad="+"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:5278/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="POPULARITY" value="4" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -8178,7 +8181,6 @@ Source: AVX .. aphvc.pdf</description>
 <parts>
 <part name="U$1" library="diy-modules" deviceset="DISPLAY-OLED-128X32" device=""/>
 <part name="IC1" library="atmel" library_urn="urn:adsk.eagle:library:105" deviceset="MEGA8-P" device="" package3d_urn="urn:adsk.eagle:package:4320/1"/>
-<part name="U$2" library="diy-modules" deviceset="SOUND-BUZZER" device=""/>
 <part name="BTNR" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:6240596/1"/>
 <part name="BTN" library="switch-omron" library_urn="urn:adsk.eagle:library:377" deviceset="10-XX" device="" package3d_urn="urn:adsk.eagle:package:27496/1"/>
 <part name="SOIL" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="1X4" device="-BIG" package3d_urn="urn:adsk.eagle:package:6240658/1"/>
@@ -8188,6 +8190,8 @@ Source: AVX .. aphvc.pdf</description>
 <part name="SWITCH" library="switch-dil" library_urn="urn:adsk.eagle:library:375" deviceset="DIP02YL" device="" package3d_urn="urn:adsk.eagle:package:27254/2"/>
 <part name="BTNR1" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:6240596/1"/>
 <part name="BTNR2" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:6240596/1"/>
+<part name="BUZZ" library="buzzer" library_urn="urn:adsk.eagle:library:113" deviceset="F/QMX" device="" package3d_urn="urn:adsk.eagle:package:5278/1"/>
+<part name="BTNBUZZ" library="adafruit" library_urn="urn:adsk.eagle:library:420" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:6240596/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -8201,10 +8205,6 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="IC1" gate="G$1" x="-40.64" y="86.36" smashed="yes">
 <attribute name="NAME" x="-58.42" y="50.8" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-58.42" y="118.11" size="1.778" layer="96"/>
-</instance>
-<instance part="U$2" gate="G$1" x="53.34" y="50.8" smashed="yes">
-<attribute name="NAME" x="40.64" y="63.5" size="1.778" layer="95"/>
-<attribute name="VALUE" x="40.64" y="60.96" size="1.778" layer="96"/>
 </instance>
 <instance part="BTNR" gate="G$1" x="-81.28" y="45.72" smashed="yes">
 <attribute name="NAME" x="-85.09" y="47.2186" size="1.778" layer="95"/>
@@ -8266,6 +8266,14 @@ Source: AVX .. aphvc.pdf</description>
 <attribute name="NAME" x="-13.97" y="90.3986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-13.97" y="85.598" size="1.778" layer="96"/>
 </instance>
+<instance part="BUZZ" gate="G$1" x="50.8" y="50.8" smashed="yes" rot="R90">
+<attribute name="NAME" x="44.45" y="48.26" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="50.8" y="57.15" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="BTNBUZZ" gate="G$1" x="35.56" y="66.04" smashed="yes">
+<attribute name="NAME" x="31.75" y="67.5386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="31.75" y="62.738" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -8299,8 +8307,6 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND"/>
-<wire x1="35.56" y1="48.26" x2="25.4" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="GND@1"/>
 <wire x1="25.4" y1="48.26" x2="-17.78" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="-17.78" y1="48.26" x2="-71.12" y2="48.26" width="0.1524" layer="91"/>
@@ -8344,14 +8350,15 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="BTNR1" gate="G$1" pin="2"/>
 <wire x1="-5.08" y1="86.36" x2="-5.08" y2="88.9" width="0.1524" layer="91"/>
 <junction x="-5.08" y="88.9"/>
+<pinref part="BUZZ" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="48.26" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB1(OC1A)"/>
-<pinref part="U$2" gate="G$1" pin="VCC"/>
-<wire x1="-15.24" y1="66.04" x2="35.56" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="66.04" x2="35.56" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="66.04" x2="30.48" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="BTNBUZZ" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -8457,6 +8464,14 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="-40.64" y1="86.36" x2="-15.24" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="BTNR1" gate="G$1" pin="1"/>
 <junction x="-15.24" y="86.36"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="BUZZ" gate="G$1" pin="2"/>
+<pinref part="BTNBUZZ" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="55.88" x2="53.34" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="66.04" x2="40.64" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
