@@ -22,7 +22,7 @@ The reason for taking measurements at intervals instead of continuously is to sl
 The system measures the Exponential Moving Average of the sensor measurements and keeps track of the latest 30 values.
 Based on some thresholds, the monitor detects whether a significant increase in the moisture has occurred.
 Once watering is detected, the system saves the watering time in its non-volatile memory and, henceforth, displays the time that has passed since the last watering on the right-hand side of the display.
-A new watering can't be detected until at least 3 hours since the last one has passed.
+A new watering can't be detected until at least 3 hours since the last one.
 This behaviour aims to prevent multiple watering events from being detected if the moisture level keeps raising for an extended period of time after the actual watering.
 
 ### Watering triggering
