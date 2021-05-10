@@ -28,3 +28,21 @@ This behaviour aims to prevent multiple watering events from being detected if t
 ### Watering triggering
 If the user feels uncertain about the automatic watering detection mechanism, they can let the system know that the watering has happened by pressing a special button and holding it for 2 seconds.
 This event is treated in the same way as the automatic detection.
+
+## Structure
+
+* `main`
+
+Contains arduino code.
+
+* `pcb`
+
+Contains designs for a printed circuit board, created in Autodesk EAGLE.
+
+![pcb](pcb/board.png)
+
+* `case`
+
+Contains the design of a 3D-printable case for the complete project. The case has snap joints and special cutouts for LCD, power supply, and moisture sensor connection.
+
+![case](case/case.png)
